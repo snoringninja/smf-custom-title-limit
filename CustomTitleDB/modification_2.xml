@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<id>iBeNifty:Custom_Title_Length</id>
+	<version>1.0</version>
+	
+	<file name="$sourcedir/Profile-Modify.php">	
+		<operation>
+			<search position="replace"><![CDATA['usertitle' => array(
+			'type' => 'text',
+			'label' => $txt['custom_title'],
+			'log_change' => true,
+			'size' => 50,
+			'permission' => 'profile_title',
+			'enabled' => !empty($modSettings['titlesEnable']),
+		),]]></search>
+			<add><![CDATA['usertitle' => array(
+			'type' => 'text',
+			'label' => $txt['custom_title'],
+			'log_change' => true,
+			'input_attr' => array('maxlength='.$modSettings['custom_title_len_override_limit']),
+			'size' => 50,
+			'permission' => 'profile_title',
+			'enabled' => !empty($modSettings['titlesEnable']),
+		),]]></add>
+		</operation>
+
+	</file>
+
+	<file name="$sourcedir/ManageSettings.php">
+		<operation>
+			<search position="before"><![CDATA[			// Option-ish things... miscellaneous sorta.
+			array('check', 'allow_disableAnnounce'),
+			array('check', 'disallow_sendBody'),]]></search>
+			<add><![CDATA[		'',
+			// Custom Title Limiting
+			array('int', 'custom_title_len_override_limit'),]]></add>
+		</operation>
+	</file>
+	
+</modification>

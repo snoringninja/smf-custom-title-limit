@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<id>iBeNifty:Custom_Title_Limit</id>
+	<version>1.0</version>
+        
+	<file name="$languagedir/Modifications.english.php">
+		<operation>
+			<search position="end" />
+			<add><![CDATA[
+// Custom Title Character Length
+$txt['custom_title_len_override_limit'] = 'Set the limit (it will truncate after length 255):';
+]]></add>
+		</operation>
+	</file>
+
+	<file name="$languagedir/Help.english.php">
+		<operation>
+			<search position="end" />
+			<add><![CDATA[
+$helptxt['custom_title_len_override_limit'] = 'Set this number to anything you\'d like.  In doing so, you will be limited the length of the custom title that can be set by a user.
+By default, this value is set to the maximum number allowed by SMF, which is 255.
+<br /><br />
+Please be aware that after a length of 255, SMF will automatically truncate the title down to a maximum of 255.';
+	]]></add>
+		</operation>
+	</file>
+        
+</modification>
