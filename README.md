@@ -2,7 +2,7 @@ Custom Title Limit by SMF 2.0.x
 ===
 ### Set a limit on custom title length
 
-#### There are two packages in this mod:
+#### There are two different versions of this mod:
 * CustomTitleDB
 * CustomTitleNoDB
 
