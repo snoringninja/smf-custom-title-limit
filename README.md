@@ -1,5 +1,6 @@
-Custom Title Limit by SMF 2.0.x
+Custom Title Limit for SMF 2.0.x
 ===
+###### By Snoring Ninja (https://snoring.ninja)
 ### Set a limit on custom title length
 
 #### There are two different versions of this mod:
